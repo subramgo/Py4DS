@@ -8,7 +8,6 @@ numerical libraries,
 
 1. Load iris dataset 
 2. Perform Classification
-3. Plot output
 
 Mar-07-2016
 Gopi Subramanian
@@ -16,21 +15,21 @@ Gopi Subramanian
 
 # Load Libraries
 import numpy as np 
-import matplotlib.pyplot as plt 
-from sklearn.cluster import KMeans
 from sklearn import datasets
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score
+
 
 # Let us use Iris dataset
 iris = datasets.load_iris()
-X = iris.data
-Y = iris.target
+x = iris.data
+y = iris.target
 
-# Combine and shuffle them
-X_all = np.column_stack([X,Y])
-np.random.shuffle(X_all)
+# Build a classifier
+estimator = DecisionTreeClassifier()
+estimator.fit(x,y)
+predicted_y = estimator.predict(x)
 
-# Train test split of data
-# We need  80/20 split.
-# 80% of our records for Training
-# 20% Remaining for our Test set
-train,test = train_test_split(X_all,test_size=0.2)
+# Find model accuracy
+print "Model accuracy = %0.2f"%(accuracy_score(y,predicted_y) * 100) + "%\n"
+    
