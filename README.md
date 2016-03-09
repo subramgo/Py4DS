@@ -1,5 +1,5 @@
 # Py4DS
-Sample scripts for my talk in Dayanand College of Engineering on 7th March 2016
+Sample scripts for my talk in Dayanand College of Engineering on 10th March 2016
 
 Introduction to some Python Libraries. Examples using the following libraries
 
