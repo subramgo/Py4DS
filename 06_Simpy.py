@@ -71,5 +71,6 @@ env.process(setup(env, No_counters, item_scan_time))
 # Simulation in minutes
 # 8 hours
 env.run(until=480)
-print  '%.3f Average minutes spent by a customer at counter ' %(sum(time_spent_at_counter) / (1.0*len(time_spent_at_counter)))
+print  '%.3f Average minutes spent by a customer at counter ' \
+%(sum(time_spent_at_counter) / (1.0*len(time_spent_at_counter)))
 
